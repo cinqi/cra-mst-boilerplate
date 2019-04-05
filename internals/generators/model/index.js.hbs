@@ -1,0 +1,20 @@
+import { types } from 'mobx-state-tree'
+import makeInspectable from 'mobx-devtools-mst';
+
+const {{properCase name}}Store = types
+    .model('{{properCase name}}Store', {
+        sample: types.string
+    })
+    .actions(self => ({
+        action() {
+            self.sample = 'foo'
+    }
+    }));
+
+const {{camelCase name}}Store = {{properCase name}}Store.create({
+    sample: "bar"
+});
+
+makeInspectable({{camelCase name}}Store);
+
+export default {{camelCase name}}Store;

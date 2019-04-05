@@ -1,0 +1,23 @@
+import React, { Component } from 'react';
+import { observer, inject } from 'mobx-react';
+{{#if addHeaders}}
+import { Helmet } from 'react-helmet';
+{{/if}}
+
+class {{ properCase name }} extends Component {
+    render() {
+        return (
+            <div>
+                {{#if addHeaders}}
+                <Helmet>
+                    <title>{{ properCase name }}</title>
+                    <meta name="description" content="Description of {{ properCase name }}"/>
+                </Helmet>
+                {{/if}}
+                Content here
+            </div>
+            );
+    }
+}
+
+export default inject('rootStore')(observer({{ properCase name }}));
