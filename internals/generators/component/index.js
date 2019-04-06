@@ -3,9 +3,9 @@ module.exports = {
   prompts: [{
     type: 'input',
     name: 'name',
-    message: 'component name please',
+    message: 'Component name:',
   }],
-  actions: (data) => {
+  actions: () => {
     const actions = [
       {
         type: 'add',

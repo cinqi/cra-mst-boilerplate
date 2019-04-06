@@ -14,7 +14,7 @@ module.exports = {
     name: 'name',
     message: 'Model name',
   }],
-  actions: (data) => {
+  actions: () => {
     const actions = [
       {
         type: 'add',
@@ -22,7 +22,6 @@ module.exports = {
         templateFile: './model/index.js.hbs',
       },
     ];
-
     actions.push({
       type: 'prettify',
       path: '/models/',
