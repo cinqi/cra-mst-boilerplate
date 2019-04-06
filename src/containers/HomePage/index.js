@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Helmet } from 'react-helmet';
 
+/* eslint-disable react/prefer-stateless-function */
 class HomePage extends Component {
   render() {
     return (
