@@ -1,5 +1,12 @@
 import React, { Component } from 'react';
+{{#if addModel}}
 import { observer, inject } from 'mobx-react';
+{{else}}
+// Uncomment this line if you want to observe some store
+//
+// import { observer, inject } from 'mobx-react';
+{{/if}}
+
 {{#if addHeaders}}
 import { Helmet } from 'react-helmet';
 {{/if}}
@@ -7,7 +14,7 @@ import { Helmet } from 'react-helmet';
 class {{ properCase name }} extends Component {
     render() {
         return (
-            <div>
+            <>
                 {{#if addHeaders}}
                 <Helmet>
                     <title>{{ properCase name }}</title>
@@ -15,9 +22,15 @@ class {{ properCase name }} extends Component {
                 </Helmet>
                 {{/if}}
                 Content here
-            </div>
+            </>
             );
     }
 }
 
-export default inject('rootStore')(observer({{ properCase name }}));
+{{#if addModel}}
+export default inject('{{ camelCase name }}DomainStore')(observer({{ properCase name }}));
+{{else}}
+// If you want to observe and inject another store to container, use export below:
+// export default inject('storeName')(observer({{ properCase name }}));
+export default {{ properCase name }};
+{{/if}}

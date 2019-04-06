@@ -1,8 +1,10 @@
 import { types } from 'mobx-state-tree'
 import makeInspectable from 'mobx-devtools-mst';
 
-const {{properCase name}}Store = types
-    .model('{{properCase name}}Store', {
+// Add created store to src/stores.js
+
+const {{properCase name}}{{store_type}}Store = types
+    .model('{{properCase name}}{{store_type}}Store', {
         sample: types.string
     })
     .actions(self => ({
@@ -11,10 +13,10 @@ const {{properCase name}}Store = types
     }
     }));
 
-const {{camelCase name}}Store = {{properCase name}}Store.create({
+const {{camelCase name}}{{store_type}}Store = {{properCase name}}{{store_type}}Store.create({
     sample: "bar"
 });
 
-makeInspectable({{camelCase name}}Store);
+makeInspectable({{camelCase name}}{{store_type}}Store);
 
-export default {{camelCase name}}Store;
+export default {{camelCase name}}{{store_type}}Store;

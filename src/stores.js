@@ -1,21 +1,8 @@
-//  If you want to use only one root store, add other models in this store
-import { types } from 'mobx-state-tree'
-import makeInspectable from 'mobx-devtools-mst';
+import globalViewStore from './models/View/GlobalViewStore';
+// Add generated stores here
 
-const RootStore = types
-  .model('RootStore', {
-      test: types.string
-  })
-  .actions(self => ({
-    foo() {
-      self.test = 'foo'
-    }
-  }));
+const stores = {
+  globalViewStore
+};
 
-const rootStore = RootStore.create({
-  test: "bar"
-});
-
-makeInspectable(rootStore);
-
-export default rootStore;
+export default stores;

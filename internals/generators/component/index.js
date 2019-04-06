@@ -5,9 +5,20 @@ module.exports =  {
       name: 'name',
       message: 'component name please'
     }],
-    actions: [{
-      type: 'add',
-      path: '../../src/components/{{properCase name}}/index.js',
-      templateFile: './component/index.js.hbs'
-    }]
+    actions: data => {
+
+      const actions = [
+        {
+          type: 'add',
+          path: '../../src/components/{{properCase name}}/index.js',
+          templateFile: './component/index.js.hbs'
+        }
+      ];
+
+      actions.push({
+        type: 'prettify',
+        path: '/components/',
+      });
+      return actions;
+    }
   };
