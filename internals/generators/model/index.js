@@ -13,7 +13,12 @@ module.exports = {
     type: 'input',
     name: 'name',
     message: 'Model name',
-  }],
+  },{
+    type: 'confirm',
+    name: 'addAsync',
+    default: true,
+    message: 'Do you want use async calls in actions?',
+  },],
   actions: () => {
     const actions = [
       {
