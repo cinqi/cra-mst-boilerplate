@@ -4,7 +4,7 @@ const componentGenerator = require('./component/index.js');
 const containerGenerator = require('./container/index.js');
 const modelGenerator = require('./model/index.js');
 
-module.exports = plop => {
+module.exports = (plop) => {
   plop.setGenerator('component', componentGenerator);
   plop.setGenerator('container', containerGenerator);
   plop.setGenerator('model', modelGenerator);
@@ -20,5 +20,4 @@ module.exports = plop => {
     exec(`npm run prettify -- "${folderPath}"`);
     return folderPath;
   });
-
 };

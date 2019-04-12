@@ -3,19 +3,20 @@ Motivation behind this project was to create a simple boilerplate that I
 could use to start projects with. Project is heavily inspired by [React Boilerplate](https://www.reactboilerplate.com/).
 
 Basic requirements were simple:
- * create react app without ejecting
- * mobx-state-tree
- * react-router
- * simple generators for easier component creation
+ * [create react app](https://github.com/facebook/create-react-app) without ejecting
+ * [mobx-state-tree](https://github.com/mobxjs/mobx-state-tree)
+ * [react-router](https://github.com/ReactTraining/react-router)
+ * [react-loadable](https://github.com/jamiebuilds/react-loadable)
+ * simple [plop](https://plopjs.com/documentation/) generators for easier component creation
     * container
     * component
     * model
 
-Todo list:
- * localstorage
- * better integration between mst and react router (?) 
- * maybe i18n support
- * tests
+**Todo list**:
+ - [ ] localstorage
+ - [ ] better integration between mst and react router (?) 
+ - [ ] maybe i18n support
+ - [ ] tests
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -45,6 +46,17 @@ The build is minified and the filenames include the hashes.<br>
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+### `npm run generate`
+
+Generates code for React component, container or MST model. When creating container, it is
+possible to generate matching MST store and automatically inject it to the container.
+
+**TODO**: Automatic way to include created model to stores.js.
+
+### `npm run lint:js`
+
+**TODO**: Uses react-app config, might need to extend.
 
 ### `npm run eject`
 
