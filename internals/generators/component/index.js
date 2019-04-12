@@ -4,6 +4,11 @@ module.exports = {
     type: 'input',
     name: 'name',
     message: 'Component name:',
+  }, {
+    type: 'confirm',
+    name: 'addHook',
+    default: true,
+    message: 'Do you want to use hooks?',
   }],
   actions: () => {
     const actions = [
