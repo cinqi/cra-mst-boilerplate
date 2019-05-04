@@ -1,7 +1,6 @@
 {
   "name": "cra-mst-boilerplate",
   "version": "0.1.0",
-  "homepage": "https://gitlab.com/cinqi/cra-mst-boilerplate",
   "author": "Tuomas Rissanen <rice@iki.fi>",
   "license": "MIT",
   "private": true,
