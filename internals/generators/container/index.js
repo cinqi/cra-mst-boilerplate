@@ -35,6 +35,9 @@ module.exports = {
         type: 'add',
         path: '../../src/models/Domain/{{properCase name}}DomainStore.js',
         templateFile: './model/index.js.hbs',
+        data: {
+          store_type: "Domain"
+        }
       });
     }
 
