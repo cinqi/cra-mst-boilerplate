@@ -26,6 +26,18 @@ module.exports = {
         path: '../../src/models/{{store_type}}/{{properCase name}}{{store_type}}Store.js',
         templateFile: './model/index.js.hbs',
       },
+      {
+        type: 'append',
+        path: '../../src/stores.js',
+        pattern: /import globalViewStore from '\.\/models\/View\/GlobalViewStore';/gi,
+        template: "import {{camelCase name}}{{store_type}}Store from './models/{{store_type}}/{{properCase name}}{{store_type}}Store';",
+      },
+      {
+        type: 'append',
+        path: '../../src/stores.js',
+        pattern: /globalViewStore,/gi,
+        template: "  {{camelCase name}}{{store_type}}Store,",
+      }
     ];
     actions.push({
       type: 'prettify',

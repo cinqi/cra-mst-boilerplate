@@ -29,6 +29,18 @@ module.exports = {
         path: '../../src/containers/{{properCase name}}/Loadable.js',
         templateFile: './container/Loadable.js.hbs',
       },
+      {
+        type: 'append',
+        path: '../../src/stores.js',
+        pattern: /import globalViewStore from '\.\/models\/View\/GlobalViewStore';/gi,
+        template: "import {{camelCase name}}DomainStore from './models/Domain/{{properCase name}}DomainStore';",
+      },
+      {
+        type: 'append',
+        path: '../../src/stores.js',
+        pattern: /globalViewStore,/gi,
+        template: "  {{camelCase name}}DomainStore,",
+      }
     ];
     if (data.addModel) {
       actions.push({
