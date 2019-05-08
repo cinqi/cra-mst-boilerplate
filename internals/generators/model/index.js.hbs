@@ -10,29 +10,36 @@ import makeInspectable from 'mobx-devtools-mst';
 // {{camelCase name}}{{store_type}}Store,
 
 const {{properCase name}}{{store_type}}Store = types
-    .model('{{properCase name}}{{store_type}}Store', {
+    .model('{{camelCase name}}{{store_type}}Store', {
         sample: types.string,
         state: types.string,
     })
-    .actions(self => ({
-        action() {
-            self.sample = 'foo'
-        },
-        {{#if addAsync}}
-        asyncAction: flow(function* asyncAction() {
-            try {
-                self.sample = yield someAjaxCall();
-                self.state = "done"
-            } catch (error) {
-                self.state = error
-            }
-        }),
-        {{/if}}
-    }));
+    .views(self => {
+        return {
+            // view functions
+        }
+    })
+    .actions(self => {
+        return {
+            action() {
+                self.sample = 'foo'
+            },
+{{#if addAsync}}
+            asyncAction: flow(function* asyncAction() {
+                try {
+                    self.sample = yield someAjaxCall();
+                    self.state = "done"
+                } catch (error) {
+                    self.state = error
+                }
+            }),
+{{/if}}
+        }
+    });
 
 const {{camelCase name}}{{store_type}}Store = {{properCase name}}{{store_type}}Store.create({
-    sample: "bar",
-    state: "loading",
+sample: "bar",
+state: "loading",
 });
 
 makeInspectable({{camelCase name}}{{store_type}}Store);
